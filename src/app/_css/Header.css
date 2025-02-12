@@ -1,0 +1,181 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background: transparent;
+  color: white;
+  transition: background-color 1s ease, color 0.5s ease, border-bottom 1s ease;
+}
+
+.header.scrolled {
+  background: #ffffff;
+  color: black;
+  border-bottom: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-menu a {
+  display: flex;
+
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+}
+
+.nav-menu a:hover {
+  color: #14c4db;
+}
+
+
+.logo {
+  font-weight: bold;
+  font-size: 20px;
+  font-weight: 700;
+}
+.logo_black{
+  color: #16325B;
+}
+.logo_white{
+  color: #fff;
+}
+
+.nav-menu {
+  display: none;
+}
+
+.hamburger-menu {
+  font-size: 24px;
+  cursor: pointer;
+  display: block;
+}
+
+.auth-buttons {
+  display: none;
+}
+
+.auth-buttons button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.button {
+  padding: 15px 20px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.signup-button {
+  background-color: #424242;
+  color: white;
+}
+
+.login-button {
+  background-color: #0B2F9F;
+  color: white;
+}
+
+.login_button {
+  display: flex;
+  align-items: center;
+  background-color: #206dfb;
+  color: white;
+}
+
+.want_button {
+  background-color: #fdab44;
+  color: white;
+
+}
+
+/* Mobile Drawer Styling */
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #ccc;
+}
+
+.close-button {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #000;
+}
+
+.drawer-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.drawer-item {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.drawer-item a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+}
+
+.drawer-item:hover {
+  color: #0B2F9F;
+}
+
+
+/* Modal Styling */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+}
+
+/* Desktop View */
+@media (min-width: 768px) {
+  .hamburger-menu {
+    display: none;
+  }
+
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    margin-top: 10px;
+  }
+
+  .auth-buttons {
+    display: flex;
+  }
+}

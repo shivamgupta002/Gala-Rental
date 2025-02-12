@@ -1,0 +1,41 @@
+/* Background Styling */
+.bg_hero {
+    background-image: url('/images/bg_1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 60vh;
+    width: 100vw;
+    position: relative;
+}
+
+.bg_color {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.8;
+    background:linear-gradient(to right, #207dff 0%, #a16ae8 100%);
+}
+
+.content {
+    color: #fff;
+    text-align: center;
+    padding-top: 35vh;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.content span{
+    margin-left: 20px;
+}
+.hero_h1 {
+    font-size: 54px;
+    color: #fff;
+    line-height: 1.2;
+    font-weight: 400;
+    text-align: center;
+    margin: 10px;
+}
+

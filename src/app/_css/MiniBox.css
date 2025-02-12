@@ -1,0 +1,110 @@
+.miniBox-container {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.miniBox-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.miniBox-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .miniBox-grid {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .miniBox-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.miniBox-item {
+  width: 180px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .miniBox-item {
+    width: 160px;
+    height: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .miniBox-item {
+    width: 90%;
+    max-width: 300px;
+    height: 130px;
+  }
+}
+
+.miniBox-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.miniBox-item::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  top: 0;
+  left: -100%;
+  transition: left 0.3s ease-in-out;
+}
+
+.miniBox-item:hover::before {
+  left: 0;
+}
+
+.miniBox-icon {
+  font-size: 2rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.miniBox-item:hover .miniBox-icon {
+  transform: scale(1.2);
+  color: white !important;
+}
+
+.miniBox-heading {
+  font-size: 16px;
+  margin: 10px 0;
+  transition: color 0.3s ease;
+}
+
+.miniBox-item:hover .miniBox-heading {
+  color: white;
+}
+
+.miniBox-text {
+  font-size: 14px;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.miniBox-item:hover .miniBox-text {
+  color: white;
+}
