@@ -28,7 +28,6 @@ const Header = () => {
 
   return (
     <>
-      {/* Header */}
       <header className="header" data-aos="fade-up">
         <div className="logo logo_white">
           <img src="/images/logo.jpg" alt="Logo" />
