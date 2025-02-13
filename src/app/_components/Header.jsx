@@ -14,33 +14,26 @@ const Header = () => {
   }, []);
 
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [isDrawerVisible, setIsDrawerVisible] = useState(false); // Controls rendering
 
-  const toggleDrawer = () => setDrawerOpen((prev) => !prev);
-
-  const handleScroll = () => {
-    if (window.scrollY > 20) {
-      setScrolled(true);
+  const toggleDrawer = () => {
+    if (!drawerOpen) {
+      setIsDrawerVisible(true); // Show the drawer before animation
+      setTimeout(() => setDrawerOpen(true), 10); // Small delay for smooth effect
     } else {
-      setScrolled(false);
+      setDrawerOpen(false);
+      setTimeout(() => setIsDrawerVisible(false), 500); // Delay removal after animation
     }
   };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <>
       {/* Header */}
-      <header
-        className={`header ${scrolled ? "scrolled" : ""}`}
-        data-aos="fade-up"
-      >
-        <div className={`logo ${scrolled ? "logo_black" : "logo_white"}`}>Gala Rentals</div>
+      <header className="header" data-aos="fade-up">
+        <div className="logo logo_white">
+          <img src="/images/logo.jpg" alt="Logo" />
+          <div className="hidden">Gala Rental</div>
+        </div>
         <div className="hamburger-menu" onClick={toggleDrawer}>
           ☰
         </div>
@@ -52,40 +45,27 @@ const Header = () => {
           <a href="/Login">
             <button className="button login_button"><LoginIcon /> &nbsp;Login/SignUp</button>
           </a>
-          
         </nav>
       </header>
 
-      {/* Mobile Drawer */}
-      {drawerOpen && (
-        <div className="mobile-drawer">
+      {isDrawerVisible && (
+        <div className={`mobile-drawer ${drawerOpen ? "open" : "close"}`}>
           <div className="drawer-header">
-            <button className="close-button" onClick={toggleDrawer}>
-              ✕
-            </button>
+            <button className="close-button" onClick={toggleDrawer}>✕</button>
           </div>
           <div className="drawer-content">
             <div className="drawer-item">
-              <a href="/" onClick={toggleDrawer}>
-                <HomeIcon />Home
-              </a>
+              <a href="/" onClick={toggleDrawer}><HomeIcon />Home</a>
             </div>
             <div className="drawer-item">
-              <a href="/Categories" onClick={toggleDrawer}>
-                <CategoryIcon />Categories
-              </a>
+              <a href="/Categories" onClick={toggleDrawer}><CategoryIcon />Categories</a>
             </div>
             <div className="drawer-item">
-              <a href="/Wishlist" onClick={toggleDrawer}>
-                <WishlistIcon />Wishlist
-              </a>
+              <a href="/Wishlist" onClick={toggleDrawer}><WishlistIcon />Wishlist</a>
             </div>
             <div className="drawer-item">
-              <a href="/Cart" onClick={toggleDrawer}>
-                <CartIcon /> Cart
-              </a>
+              <a href="/Cart" onClick={toggleDrawer}><CartIcon /> Cart</a>
             </div>
-
             <div className="drawer-item">
               <a href="/Login">
                 <button className="button login_button"><LoginIcon />&nbsp; Login/SignUp</button>

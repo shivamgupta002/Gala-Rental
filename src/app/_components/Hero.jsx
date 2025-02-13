@@ -40,7 +40,7 @@ const Hero = () => {
           <br />
           <br />
           “Own the Moment, Not the Outfit.”
-
+    
         </p>
 
         <div className="hero_stats" data-aos="fade-up">
