@@ -10,7 +10,7 @@
   background: #143D60;
   color: white;
   transition: all 2s ease, color 0.5s ease, border-bottom 1s ease;
-  margin-top: 35px;
+  margin-top: 32px;
 }
 
 .nav-menu a {
@@ -154,7 +154,7 @@
 .drawer-header {
   display: flex;
   justify-content: flex-end;
-  padding: 30px;
+  padding: 45px;
   background-color: #f4f4f4;
   border-bottom: 1px solid #ccc;
 }
